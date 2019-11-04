@@ -1,0 +1,15 @@
+language: minimal
+arch: arm64
+os: linux
+dist: xenial
+
+env:
+  global:
+  - VERSION=5.6.40 ALIAS=$VERSION
+  - ICU_INSTALL_DIR=$HOME/.phpenv/versions/$VERSION
+  - RELEASE=xenial
+
+script:
+  - echo "Building php"
+  - __dots() { while true ; do echo -en . ; sleep 30 ; done } ; __dots &
+  - sleep 1h
